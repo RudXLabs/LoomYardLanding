@@ -44,16 +44,33 @@
 			pointer-events: none;
 		}
 
-		/* Add margin to the logo */
+		/* Ensure proper spacing for the logo */
 		.logo-container {
-			margin: 16px;
+			margin-bottom: 24px;
+			margin-top: 16px;
+			/* Adjust this as needed for spacing */
 		}
 
-		/* Adjust footer spacing */
+		/* Spacing for the heading */
+		.heading-container {
+			margin-bottom: 24px;
+		}
+
+		/* Center and space footer properly */
 		.footer {
-			margin-top: 24px;
+			margin-top: 32px;
 			padding-bottom: 16px;
 			text-align: center;
+			position: relative;
+			z-index: 1;
+		}
+
+		/* Ensure SVG scales properly */
+		.svg-container {
+			margin-top: 16px;
+			margin-bottom: 16px;
+			max-width: 90%;
+			/* Scale SVG for mobile */
 		}
 
 		.dot {
@@ -150,26 +167,23 @@
 	<div class="background-animation" id="backgroundAnimation"></div>
 
 	<div class="main-content min-h-screen flex flex-col items-center justify-center px-4">
-		<div class="absolute top-6 left-6 md:left-8 z-10 ">
+		<div class="absolute top-6 left-6 md:left-8 z-10 logo-container">
 			<h3 class="text-3xl md:text-4xl font-black logo-gradient tracking-tight">
 				Loom<span class="text-white">Yard</span>
 			</h3>
 		</div>
 
-		<div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+		<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-12">
 			<div class="text-left space-y-8">
-				<div class="space-y-6">
-					<div class="text-center md:text-left space-y-6 mt-16">
-						<h1 class="text-4xl sm:text-5xl md:text-7xl font-black leading-tight animate-title">
-							<span class="title-gradient">Revolutionizing</span><br>
-							<span class="title-gradient animate__animated animate__fadeInLeft animate__delay-1s">B2B
-								Textile</span><br>
-							<span class="title-gradient animate__animated animate__fadeInLeft animate__delay-2s">Trade
-								in India</span>
-						</h1>
-					</div>
+				<div class="space-y-6 mt-12">
+					<h1 class="text-5xl md:text-7xl font-black leading-tight animate-title">
+						<span class="title-gradient">Revolutionizing</span><br>
+						<span class="title-gradient animate__animated animate__fadeInLeft animate__delay-1s">B2B
+							Textile</span><br>
+						<span class="title-gradient animate__animated animate__fadeInLeft animate__delay-2s">Trade in
+							India</span>
+					</h1>
 				</div>
-
 				<div class="glass-effect rounded-xl p-4 md:p-1 animate__animated animate__fadeInUp animate__delay-3s">
 					<form id="waitlistForm" class="flex flex-col gap-4 md:flex-row" name="loomyard-contact"
 						method="POST" data-netlify="true">
@@ -252,7 +266,7 @@
 				</script>
 			</div>
 
-			<div class="relative w-full max-w-md md:max-w-lg mx-auto">
+			<div class="relative w-full svg-container">
 				<svg viewBox="0 0 400 400" class="w-full h-auto">
 					<defs>
 						<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -395,14 +409,15 @@
 			</div>
 		</div>
 
-		<div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-full text-center z-10 mt-12">
+		<div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center z-10">
 			<p class="text-sm text-gray-400 opacity-75">
 				A product by
 				<a href="https://rudxlabs.com" target="_blank" rel="noopener noreferrer"
 					class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
 					RudxLabs Private Limited
+
 				</a>
-				© 2024
+				© 2025
 			</p>
 		</div>
 	</div>
