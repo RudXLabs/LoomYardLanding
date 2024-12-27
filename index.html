@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LoomYard - B2B Textile Trade</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+		html,
+		body {
+			background-color: #000000;
+			/* Replace with your desired background color */
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+
+		body {
+			font-family: 'Outfit', sans-serif;
+			background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+			color: #fff;
+			overflow-x: hidden;
+			min-height: 100vh;
+		}
+
+		.container {
+			position: relative;
+			z-index: 1;
+			/* Ensures content is above the background */
+		}
+
+		.background-animation {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+			opacity: 0.4;
+			pointer-events: none;
+		}
+
+		.dot {
+			position: absolute;
+			background: radial-gradient(circle at center, rgba(96, 165, 250, 0.2) 0%, transparent 70%);
+			border-radius: 50%;
+			transition: all 0.3s ease-out;
+		}
+
+		.main-content {
+			position: relative;
+			z-index: 1;
+		}
+
+		.logo-gradient {
+			background: linear-gradient(45deg, #22d3ee, #818cf8);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		.title-gradient {
+			background: linear-gradient(to right, #60a5fa, #a78bfa, #f472b6);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		.animate-title {
+			animation: titleSlide 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+		}
+
+		.glass-effect {
+			background: rgba(255, 255, 255, 0.03);
+			backdrop-filter: blur(10px);
+		}
+
+		input[type="email"] {
+			background: rgba(255, 255, 255, 0.1) !important;
+			color: #ffffff !important;
+		}
+
+		input[type="email"]::placeholder {
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		@keyframes titleSlide {
+			0% {
+				transform: translateY(100px);
+				opacity: 0;
+			}
+
+			100% {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+
+		@keyframes weave {
+			0% {
+				transform: translateX(0);
+			}
+
+			50% {
+				transform: translateX(20px);
+			}
+
+			100% {
+				transform: translateX(0);
+			}
+		}
+
+		.animate-weave {
+			animation: weave 4s ease-in-out infinite;
+		}
+
+		.animate-spin-slow {
+			animation: rotate 20s linear infinite;
+		}
+
+		@keyframes rotate {
+			from {
+				transform: rotate(0deg);
+			}
+
+			to {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="background-animation" id="backgroundAnimation"></div>
+
+	<div class="main-content min-h-screen flex items-center justify-center p-4">
+		<div class="absolute top-8 left-8 z-10">
+			<h3 class="text-4xl font-black logo-gradient tracking-tight">
+				Loom<span class="text-white">Yard</span>
+			</h3>
+		</div>
+
+		<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+			<div class="text-left space-y-8">
+				<div class="space-y-6 mt-12">
+					<h1 class="text-5xl md:text-7xl font-black leading-tight animate-title">
+						<span class="title-gradient">Revolutionizing</span><br>
+						<span class="title-gradient animate__animated animate__fadeInLeft animate__delay-1s">B2B
+							Textile</span><br>
+						<span class="title-gradient animate__animated animate__fadeInLeft animate__delay-2s">Trade in
+							India</span>
+					</h1>
+				</div>
+
+				<div class="glass-effect rounded-xl p-6 animate__animated animate__fadeInUp animate__delay-3s">
+					<form class="flex space-x-4" name="loomyard-contact" method="POST" data-netlify="true">
+						<input type="email" placeholder="Enter your email address"
+							class="flex-1 px-4 py-3 rounded-lg border border-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-200/20 transition duration-200 outline-none"
+							required>
+						<button type="submit"
+							class="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-medium py-3 px-6 rounded-lg transition duration-200 transform hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-500/20">
+							Join Waitlist
+						</button>
+					</form>
+				</div>
+			</div>
+
+			<div class="relative">
+				<svg viewBox="0 0 400 400" class="w-full">
+					<defs>
+						<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+							<stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+							<stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+						</linearGradient>
+						<linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+							<stop offset="0%" style="stop-color:#2dd4bf;stop-opacity:1" />
+							<stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+						</linearGradient>
+						<linearGradient id="outerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+							<stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1">
+								<animate attributeName="stop-color" values="#0ea5e9;#2dd4bf;#0ea5e9" dur="8s"
+									repeatCount="indefinite" />
+							</stop>
+							<stop offset="100%" style="stop-color:#2563eb;stop-opacity:1">
+								<animate attributeName="stop-color" values="#2563eb;#0ea5e9;#2563eb" dur="8s"
+									repeatCount="indefinite" />
+							</stop>
+						</linearGradient>
+						<filter id="glow">
+							<feGaussianBlur stdDeviation="2" result="coloredBlur" />
+							<feMerge>
+								<feMergeNode in="coloredBlur" />
+								<feMergeNode in="SourceGraphic" />
+							</feMerge>
+						</filter>
+					</defs>
+
+					<!-- Morphing Outer Ring -->
+					<path
+						d="M200,5 C300,5 395,100 395,200 C395,300 300,395 200,395 C100,395 5,300 5,200 C5,100 100,5 200,5"
+						stroke="url(#outerGrad)" stroke-width="4" fill="none" opacity="0.6">
+						<animate attributeName="d" values="M200,5 C300,5 395,100 395,200 C395,300 300,395 200,395 C100,395 5,300 5,200 C5,100 100,5 200,5;
+										M200,5 C320,5 395,80 395,200 C395,320 320,395 200,395 C80,395 5,320 5,200 C5,80 80,5 200,5;
+										M200,5 C300,5 395,100 395,200 C395,300 300,395 200,395 C100,395 5,300 5,200 C5,100 100,5 200,5" dur="3s"
+							repeatCount="indefinite" />
+						<animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200"
+							dur="30s" repeatCount="indefinite" />
+					</path>
+
+					<!-- Textile pattern -->
+					<g class="animate-weave">
+						<path d="M100 150 Q200 100 300 150" stroke="url(#grad1)" stroke-width="2" fill="none"
+							opacity="0.5">
+							<animate attributeName="d" dur="4s"
+								values="M100 150 Q200 100 300 150;M100 150 Q200 200 300 150;M100 150 Q200 100 300 150"
+								repeatCount="indefinite" />
+						</path>
+						<path d="M100 200 Q200 150 300 200" stroke="url(#grad2)" stroke-width="2" fill="none"
+							opacity="0.5">
+							<animate attributeName="d" dur="4s"
+								values="M100 200 Q200 150 300 200;M100 200 Q200 250 300 200;M100 200 Q200 150 300 200"
+								repeatCount="indefinite" begin="1s" />
+						</path>
+						<path d="M100 250 Q200 200 300 250" stroke="url(#grad1)" stroke-width="2" fill="none"
+							opacity="0.5">
+							<animate attributeName="d" dur="4s"
+								values="M100 250 Q200 200 300 250;M100 250 Q200 300 300 250;M100 250 Q200 200 300 250"
+								repeatCount="indefinite" begin="2s" />
+						</path>
+					</g>
+
+					<!-- Center elements -->
+					<circle cx="200" cy="200" r="100" stroke="url(#grad2)" stroke-width="1" fill="none" opacity="0.5" />
+					<circle cx="200" cy="200" r="50" stroke="url(#grad1)" stroke-width="2" fill="none">
+						<animate attributeName="r" dur="3s" values="50;55;50" repeatCount="indefinite" />
+					</circle>
+
+					<!-- Supply Chain Nodes -->
+					<!-- Factory Node -->
+					<g transform="translate(100,150)" filter="url(#glow)">
+						<circle r="15" fill="url(#grad1)">
+							<animate attributeName="r" values="15;17;15" dur="2s" repeatCount="indefinite" />
+						</circle>
+						<rect x="-8" y="-8" width="16" height="16" stroke="white" stroke-width="1.5" fill="none" />
+					</g>
+
+					<!-- Warehouse Node -->
+					<g transform="translate(200,80)" filter="url(#glow)">
+						<circle r="15" fill="url(#grad2)">
+							<animate attributeName="r" values="15;17;15" dur="2s" repeatCount="indefinite"
+								begin="0.5s" />
+						</circle>
+						<path d="M-8,-8 L0,-12 L8,-8 L8,8 L-8,8 Z" stroke="white" stroke-width="1.5" fill="none" />
+					</g>
+
+					<!-- Distribution Node -->
+					<g transform="translate(300,150)" filter="url(#glow)">
+						<circle r="15" fill="url(#grad1)">
+							<animate attributeName="r" values="15;17;15" dur="2s" repeatCount="indefinite" begin="1s" />
+						</circle>
+						<path d="M-8,0 L8,0 M0,-8 L0,8" stroke="white" stroke-width="1.5" />
+					</g>
+
+					<!-- Retailer Node -->
+					<g transform="translate(200,300)" filter="url(#glow)">
+						<circle r="15" fill="url(#grad2)">
+							<animate attributeName="r" values="15;17;15" dur="2s" repeatCount="indefinite"
+								begin="1.5s" />
+						</circle>
+						<path d="M-8,8 L-8,-4 L0,-8 L8,-4 L8,8" stroke="white" stroke-width="1.5" fill="none" />
+					</g>
+
+					<!-- Flow Particles with fade-in -->
+					<circle r="3" fill="url(#grad1)" opacity="0">
+						<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.5s" fill="freeze" />
+						<animateMotion path="M100,150 L200,80" dur="1.5s" repeatCount="indefinite" />
+					</circle>
+					<circle r="3" fill="url(#grad2)" opacity="0">
+						<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1s" fill="freeze" />
+						<animateMotion path="M200,80 L300,150" dur="1.5s" repeatCount="indefinite" begin="0.5s" />
+					</circle>
+					<circle r="3" fill="url(#grad1)" opacity="0">
+						<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.5s" fill="freeze" />
+						<animateMotion path="M300,150 L200,300" dur="1.5s" repeatCount="indefinite" begin="1s" />
+					</circle>
+					<circle r="3" fill="url(#grad2)" opacity="0">
+						<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2s" fill="freeze" />
+						<animateMotion path="M200,300 L100,150" dur="1.5s" repeatCount="indefinite" begin="1.5s" />
+					</circle>
+					<!-- Node Connection Highlights -->
+					<path d="M100,150 L200,80" stroke="url(#grad1)" stroke-width="1" opacity="0.3">
+						<animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s"
+							repeatCount="indefinite" />
+					</path>
+					<path d="M200,80 L300,150" stroke="url(#grad2)" stroke-width="1" opacity="0.3">
+						<animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s"
+							repeatCount="indefinite" begin="0.5s" />
+					</path>
+					<path d="M300,150 L200,300" stroke="url(#grad1)" stroke-width="1" opacity="0.3">
+						<animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s"
+							repeatCount="indefinite" begin="1s" />
+					</path>
+					<path d="M200,300 L100,150" stroke="url(#grad2)" stroke-width="1" opacity="0.3">
+						<animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s"
+							repeatCount="indefinite" begin="1.5s" />
+					</path>
+				</svg>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function createDots() {
+			const container = document.getElementById('backgroundAnimation');
+			const dotsCount = 50;
+			const dots = [];
+
+			for (let i = 0; i < dotsCount; i++) {
+				const dot = document.createElement('div');
+				dot.className = 'dot';
+				dot.style.width = Math.random() * 300 + 100 + 'px';
+				dot.style.height = dot.style.width;
+				updateDotPosition(dot);
+				container.appendChild(dot);
+				dots.push(dot);
+			}
+
+			document.addEventListener('mousemove', (e) => {
+				const mouseX = e.clientX;
+				const mouseY = e.clientY;
+
+				dots.forEach((dot, index) => {
+					const rect = dot.getBoundingClientRect();
+					const dotX = rect.left + rect.width / 2;
+					const dotY = rect.top + rect.height / 2;
+
+					const deltaX = mouseX - dotX;
+					const deltaY = mouseY - dotY;
+					const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+					if (distance < 300) {
+						const translateX = deltaX * 0.1;
+						const translateY = deltaY * 0.1;
+						dot.style.transform = `translate(${translateX}px, ${translateY}px)`;
+					} else {
+						dot.style.transform = 'translate(0, 0)';
+					}
+				});
+			});
+
+			function updateDotPosition(dot) {
+				dot.style.left = Math.random() * 100 + 'vw';
+				dot.style.top = Math.random() * 100 + 'vh';
+			}
+		}
+
+		createDots();
+	</script>
+</body>
+
+</html>
